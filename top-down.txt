@@ -1,0 +1,32 @@
+Criar a interface
+    criar header
+        criar botão adicionar problema
+        criar botão notificação ??
+        criar container de foto de perfil
+    criar section quebrador de problemas
+        criar um titulo
+        criar o design do container do problema
+            cada um vai ter o problema
+            vai ter uma área que informa se está ativo, sendo resolvido ou já foi resolvido
+            um botão para adicionar subproblema
+            um botão que abre opções de: remover problema, editar problema ou adicionar função que resolverá o problema
+    criar section de soluções & funções
+        será uma tabela com:
+            titulo
+            coluna para nome da função
+            coluna para descrição da função
+            coluna para informar que problema resolverá
+            coluna para status, sendo pendente ou feita
+    criar section para notas
+        um titulo
+        um conteiner para adicionar notas
+
+FUNÇÕES:
+    cria problema
+    cria subproblema
+    logica de status do problema
+    logica de status da criação da função
+    remove subproblema
+    adita problema
+    criar função
+    cria linha da tabela com informações da função

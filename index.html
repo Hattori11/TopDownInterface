@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0355e7ccd9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Top Down Styler</title>
+  </head>
+  <body>
+    <header>
+      <button id="add-problem">
+        <i class="fa-solid fa-plus"></i>
+        Adicionar Problema
+      </button>
+      <button id="on-notifications">
+        <i class="fa-regular fa-bell"></i>
+      </button>
+      <img id="perfil" src="assets/perfil.jpg" alt="minha foto de perfil" />
+    </header>
+    <main>
+      <section id="dashboard">
+        <section id="problem-breakdown">
+          <h2 id="container-problem">Problem Breakdown</h2>
+          <div id="container-subproblems">
+            <ul id="main-subproblems">
+              <li>
+                <i class="fa-solid fa-chevron-down"></i>
+                <span>exemplo de problema</span>
+                <span class="status-active">Pendente</span>
+                <i class="fa-solid fa-plus"></i>
+                <i class="fa-solid fa-ellipsis"></i>
+                <dialog class="option hidden">
+                  <button class="remove" aria-label="Remover problema">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                  <button class="edit" aria-label="Editar problema">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <button class="add-function">
+                    <i class="fa-solid fa-square-plus"></i>
+                    <span>Adicionar função</span>
+                  </button>
+                </dialog>
+              </li>
+              <!-- Criar <li> dinamicamente para os subproblemas principais -->
+            </ul>
+          </div>
+        </section>
+        <section id="container-functions">
+          <h2>Soluções & Funções</h2>
+          <table>
+            <thead>
+              <th>Nome da função</th>
+              <th>Descrição</th>
+              <th>Problema</th>
+              <th>Status</th>
+            </thead>
+            <tbody>
+              <!-- Aqui terão os <td> dinamicamente ao adicionar funções -->
+            </tbody>
+          </table>
+        </section>
+      </section>
+      <section id="notes">
+        <h2>Seção de Anotações</h2>
+        <textarea></textarea>
+      </section>
+    </main>
+  </body>
+</html>
