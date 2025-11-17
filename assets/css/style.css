@@ -46,7 +46,7 @@ button:hover {
 }
 
 #add-problem i {
-  font-size: 0.9em;
+  font-size: 0.5em;
 }
 
 #on-notifications {
@@ -72,12 +72,13 @@ main {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 section#dashboard {
-  height: 80%;
+  height: calc(100% - 40px);
+  overflow: hidden;
   width: 100%;
   display: flex;
   align-items: center;
@@ -90,7 +91,8 @@ section#problem-breakdown {
   width: 33%;
   border: solid 1px #eee;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
+  overflow: auto;
 }
 
 section#container-functions {
@@ -98,26 +100,27 @@ section#container-functions {
   width: 63%;
   border: solid 1px #eee;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
+  overflow-y: auto;
 }
 
 section#notes {
-  height: 16%;
+  height: 19%;
   width: 96.5%;
   border: solid 1px #eee;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
 h2 {
   font-size: medium;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 textarea {
   border: 1px solid #ddd;
-  border-radius: 8px; 
-  padding: 8px;       
+  border-radius: 8px;
+  padding: 8px;
   outline: none;
   height: 60px;
   width: 100%;
@@ -125,4 +128,115 @@ textarea {
 
 textarea:focus {
   border-color: #bbb;
+}
+
+li {
+  list-style-type: none;
+  width: 100%;
+  display: block;
+  align-items: center;
+  gap: 5px;
+}
+
+ul#main-subproblems {
+  height: 96%;
+}
+
+div.problem-header {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 20px 1fr auto auto auto;
+  align-items: center;
+  min-width: max-content;
+  gap: 5px;
+  padding-right: 10px;
+}
+
+span.status {
+  font-size: small;
+  text-align: center;
+}
+
+div.status-pending {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 80px;
+  border: solid 1px #ff000080;
+  border-radius: 10px;
+  background-color: #ff990080;
+}
+
+div.status-completed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 80px;
+  border: solid 1px #00460080;
+  border-radius: 10px;
+  background-color: #00ff0080;
+}
+
+div.problem-name {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* height: auto; */
+  color: #333;
+  font-weight: 600;
+}
+
+div#container-problem {
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  margin-top: 20px
+}
+
+th {
+  color: #666;
+  font-size: small;
+  text-align: left;
+}
+
+td {
+  color: #666;
+}
+
+td.status {
+  text-align: center;
+}
+
+td.function-name {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Nível 0 */
+#main-subproblems > li > .problem-header {
+  padding-left: 0rem;
+}
+
+/* Nível 1 */
+#main-subproblems ul > li > .problem-header {
+  padding-left: 2rem;
+}
+
+/* Nível 2 */
+#main-subproblems ul ul > li > .problem-header {
+  padding-left: 4rem;
+}
+
+/* Nível 3 */
+#main-subproblems ul ul ul > li > .problem-header {
+  padding-left: 6rem;
+}
+
+ul {
+  min-width: 0;
 }
