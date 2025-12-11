@@ -58,3 +58,10 @@ main {
     height: 70px;
     width: 70px;
 }
+
+.container-add:active {
+    border: solid 2px #aaa;
+    color: #aaa;
+    height: 60px;
+    width: 60px;
+}
