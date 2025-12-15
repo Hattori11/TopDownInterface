@@ -4,6 +4,8 @@ const closed = document.getElementById("closed-modal");
 const input = document.querySelector("dialog#add-problem > form > input");
 const containerProblem = document.getElementById("container-problem");
 
+import { state } from './state.js';
+
 open.addEventListener("click", () => {
   modal.showModal();
 });
@@ -23,6 +25,8 @@ closed.addEventListener("click", (event) => {
 
   open.style.display = "none";
   containerProblem.style.justifyContent = "flex-start";
+
+  state.canListenAction = true;
 
   modal.close();
 });
