@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+}
+
+main {
+  height: 95%;
+  width: 98%;
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#container-problem {
+  background-color: #fff;
+
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container-functions {
+  background-color: #fff;
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-add {
+  height: 60px;
+  width: 60px;
+  border: 2px solid #aaa;
+  color: #aaa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.2s ease;
+}
+
+.container-add:hover {
+  border-color: #222;
+  color: #222;
+  height: 70px;
+  width: 70px;
+}
+
+.container-add:active {
+  border: solid 2px #aaa;
+  color: #aaa;
+  height: 60px;
+  width: 60px;
+}
+
+dialog {
+  margin: auto;
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+}

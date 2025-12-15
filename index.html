@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/0355e7ccd9.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>TopDown Interface</title>
-    </head>
-    <body>
-        <main>
-            <section id="container-problem">
-                <div class="container-add">
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-            </section>
-            <section id="container-functions">
-                <div class="container-add">
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-            </section>
-        </main>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0355e7ccd9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dialogs.css">
+    <title>TopDown Interface</title>
+  </head>
+  <body>
+    <main>
+      <section id="container-problem">
+        <div class="container-add">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </section>
+      <section id="container-functions">
+        <div class="container-add">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </section>
+    </main>
+    <dialog id="add-problem">
+      <form>
+        <h2>Adicionar Problema</h2>
+        <input type="text" placeholder="Problema" /> 
+        <button id="closed-modal">Adicionar</button>
+      </form>
+    </dialog>
+
+    <script src="js/addProblem.js"></script>
+  </body>
 </html>
