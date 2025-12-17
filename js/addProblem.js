@@ -10,15 +10,16 @@ open.addEventListener("click", () => {
   modal.showModal();
 });
 
-closed.addEventListener("click", (event) => {
+function addProblem(event) {
   event.preventDefault();
-  
+
   const level0 = document.createElement("div");
   level0.setAttribute("class", "level level-0");
   const problem = document.createElement("div");
   problem.setAttribute("class", "node");
 
   problem.textContent = input.value;
+  input.value = "";
 
   level0.appendChild(problem);
   containerProblem.appendChild(level0);
@@ -28,5 +29,9 @@ closed.addEventListener("click", (event) => {
 
   state.canListenAction = true;
 
+  closed.removeEventListener("click", addProblem);
+
   modal.close();
-});
+}
+
+closed.addEventListener("click", addProblem);

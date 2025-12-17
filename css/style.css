@@ -31,6 +31,7 @@ main {
   width: 100%;
   align-items: center;
   justify-content: center;
+  overflow: auto;
 }
 
 #container-functions {
@@ -85,7 +86,7 @@ dialog {
 
 .node {
   flex: 1;
-  min-width: 80px;
+  min-width: 200px;
   height: 50px;
   border: 1px solid #999;
   margin: 0 5px;
