@@ -24,15 +24,27 @@
         </div>
       </section>
     </main>
+
     <dialog id="add-problem">
       <form>
         <h2>Adicionar Problema</h2>
         <input type="text" placeholder="Problema" /> 
-        <button id="closed-modal">Adicionar</button>
+        <button id="closed-modal-p">Adicionar</button>
+      </form>
+    </dialog>
+    <dialog id="add-function">
+      <form>
+        <h2>Adicionar Função</h2>
+        <input type="text" placeholder="Função">
+        <select id="options-problems">
+          <option value="">-- Selecione --</option>
+        </select>
+        <button id="closed-modal-f">Adicionar</button>
       </form>
     </dialog>
 
     <script src="js/addProblem.js" type="module"></script>
     <script src="js/problemsMenu.js" type="module"></script>
+    <script type="module" src="js/addFunction.js"></script>
   </body>
 </html>

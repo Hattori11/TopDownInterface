@@ -1,6 +1,6 @@
 const modal = document.getElementById("add-problem");
 const open = document.querySelector("section#container-problem > div.container-add");
-const closed = document.getElementById("closed-modal");
+const closed = document.getElementById("closed-modal-p");
 const input = document.querySelector("dialog#add-problem > form > input");
 const containerProblem = document.getElementById("container-problem");
 

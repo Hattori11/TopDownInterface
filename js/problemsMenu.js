@@ -2,7 +2,9 @@ import { state } from "./state.js";
 import { addSubproblem } from "./addSubProblems.js";
 
 const modal = document.getElementById("add-problem");
-const closed = document.getElementById("closed-modal");
+const modalF = document.getElementById("add-function");
+const closed = document.getElementById("closed-modal-p");
+const closedF = document.getElementById("closed-modal-f");
 
 function openMenu(problem) {
   if (!state.canListenAction) return;
@@ -10,9 +12,21 @@ function openMenu(problem) {
   const problemName = problem.textContent;
 
   problem.innerHTML =
-    "<button id='add-sub'>Adicionar subproblema</button> <button>Adicionar função</button> <div><input type='checkbox' /> <label>Problema resolvido</label></div>";
+    "<button id='add-sub'>Adicionar subproblema</button> <button id='add-fun'>Adicionar função</button> <div><input type='checkbox' /> <label>Problema resolvido</label></div>";
   problem.style.fontSize = "initial"; // normaliza a font
   problem.style.justifyContent = "space-evenly";
+
+  // Adiciona event listener pro botão add function
+  const openModalF = document.getElementById("add-fun");
+  openModalF.addEventListener("click", () => {
+    modalF.showModal();
+
+    closedF.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      modalF.close();
+    })
+  })
 
   return problemName;
 }
