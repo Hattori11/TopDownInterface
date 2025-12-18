@@ -38,9 +38,11 @@ main {
   background-color: #fff;
 
   flex: 1;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  position: relative;
+  overflow-y: auto;
 }
 
 .container-add {
@@ -100,4 +102,70 @@ dialog {
 
 .node:hover {
   background-color: #eee;
+}
+
+#container-functions .container-add {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* ===== TABELA - ESTILO GERAL ===== */
+#container-functions table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* ===== CABEÇALHO ===== */
+#container-functions thead {
+  background-color: #f3f3f3;
+  border-bottom: 2px solid #ddd;
+}
+
+#container-functions th {
+  padding: 16px 25px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===== CORPO ===== */
+#container-functions tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+#container-functions tbody tr:hover {
+  background-color: #f6f6f6;
+}
+
+#container-functions td {
+  padding: 14px 15px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+/* ===== STATUS ===== */
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 12px;
+  background-color: #eee;
+  color: #666;
+  text-transform: capitalize;
+}
+
+/* ===== VARIAÇÕES DE STATUS (prontas pro futuro) ===== */
+.status.pendente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.concluido {
+  background-color: #d4edda;
+  color: #155724;
 }

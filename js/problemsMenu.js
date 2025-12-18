@@ -1,5 +1,6 @@
 import { state } from "./state.js";
 import { addSubproblem } from "./addSubProblems.js";
+import { addFunction } from "./addFunction.js";
 
 const modal = document.getElementById("add-problem");
 const modalF = document.getElementById("add-function");
@@ -12,21 +13,43 @@ function openMenu(problem) {
   const problemName = problem.textContent;
 
   problem.innerHTML =
-    "<button id='add-sub'>Adicionar subproblema</button> <button id='add-fun'>Adicionar função</button> <div><input type='checkbox' /> <label>Problema resolvido</label></div>";
+    "<button class='add-sub'>Adicionar subproblema</button> <button class='add-fun'>Adicionar função</button> <div><input type='checkbox' /> <label>Problema resolvido</label></div>";
   problem.style.fontSize = "initial"; // normaliza a font
   problem.style.justifyContent = "space-evenly";
 
   // Adiciona event listener pro botão add function
-  const openModalF = document.getElementById("add-fun");
-  openModalF.addEventListener("click", () => {
-    modalF.showModal();
+  const opensModalF = document.getElementsByClassName("add-fun");
 
-    closedF.addEventListener("click", (event) => {
-      event.preventDefault();
+  for (const open of opensModalF) {
+    open.addEventListener("click", () => {
+      modalF.showModal();
+      const inputFuncName = document.querySelector(
+        "dialog#add-function > form > input"
+      );
 
-      modalF.close();
-    })
-  })
+
+      closedF.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        addFunction(inputFuncName.value, problemName);
+
+        inputFuncName.value = ""; // Apaga o que foi digitado
+
+        const allStatus = document.getElementsByClassName("status pendente");
+        for (const status of allStatus) {
+          status.addEventListener("click", () => {
+            status.classList.remove("pendente");
+            status.classList.add("concluido");
+            status.textContent = "concluído";
+          });
+        }
+
+        closedMenu(problem, problemName);
+
+        modalF.close();
+      }, {once: true});
+    });
+  }
 
   return problemName;
 }
@@ -49,17 +72,24 @@ containerProblens.addEventListener("click", (event) => {
 
   const problemName = openMenu(problem);
 
-  const addSub = document.getElementById("add-sub");
-  addSub.addEventListener("click", () => {
-    closedMenu(problem, problemName);
-    modal.showModal();
+  const addSub = document.getElementsByClassName("add-sub");
 
-    // addSubproblem(containerDad);
+  for (const add of addSub) {
+    add.addEventListener("click", () => {
+      closedMenu(problem, problemName);
+      modal.showModal();
 
-    closed.addEventListener("click", (event) => {
-      event.preventDefault();
-      addSubproblem(containerDad);
-      modal.close();
-    }, { once: true });
-  });
+      // addSubproblem(containerDad);
+
+      closed.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          addSubproblem(containerDad);
+          modal.close();
+        },
+        { once: true }
+      );
+    });
+  }
 });

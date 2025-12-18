@@ -3,6 +3,7 @@ const open = document.querySelector("section#container-problem > div.container-a
 const closed = document.getElementById("closed-modal-p");
 const input = document.querySelector("dialog#add-problem > form > input");
 const containerProblem = document.getElementById("container-problem");
+const select = document.getElementById("options-problems");
 
 import { state } from './state.js';
 
@@ -19,7 +20,11 @@ function addProblem(event) {
   problem.setAttribute("class", "node");
 
   problem.textContent = input.value;
-  input.value = "";
+  const option = document.createElement("option");
+  option.setAttribute("value", `${input.value}`);
+  option.textContent = `${input.value}`;
+  select.appendChild(option);
+  input.value = ""; // Deixa vazio o input
 
   level0.appendChild(problem);
   containerProblem.appendChild(level0);
